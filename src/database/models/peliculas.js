@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Pelicula';
+    let alias = 'Peliculas';
     let cols = {
         id: {
             type: DataTypes.BIGINT(11),
@@ -24,19 +24,19 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DECIMAL(5),
             allowNull: false
         },
-        personajes_id: {
+        genero_id: {
             type: DataTypes.BIGINT(11),
             allowNull: false
         }
     };
 
 
-    let config = {
-        timestamps: true,
-        createAt: "created_at",
-        updateAt: "updated_at",
-        deletedAt: "deleted_at",
-    };
+    /*  let config = {
+         timestamps: true,
+         createAt: "created_at",
+         updateAt: "updated_at",
+         deletedAt: "deleted_at",
+     }; */
 
     const Pelicula = sequelize.define(alias, cols, config);
     Pelicula.associate = function (models) {
@@ -47,8 +47,8 @@ module.exports = (sequelize, DataTypes) => {
             otherKey: "personaje_id"
         });
 
-        Pelicula.belongsTo(models.Genero, {
-            as: "genero",
+        Pelicula.belongsTo(models.Generos, {
+            as: "generos",
             foreignKey: "genero_id"
         })
     }

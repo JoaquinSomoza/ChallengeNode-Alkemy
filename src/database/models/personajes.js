@@ -24,23 +24,23 @@ module.exports = (sequelize, DataTypes) => {
         historia: {
             type: DataTypes.TEXT(),
         },
-        peliculas_id: {
+        /* peliculas_id: {
             type: DataTypes.INTEGER(11),
             allowNull: false
-        }
+        } */
     };
 
-    let config = {
+    /* let config = {
         timestamps: true,
         createAt: "created_at",
         updateAt: "updated_at",
         deletedAt: "deleted_at",
-    };
+    }; */
 
     const Personajes = sequelize.define(alias, cols, config);
 
     Personajes.associate = (models) => {
-        Personajes.belongsTo(models.Peliculas, {
+        Personajes.belongsToMany(models.Peliculas, {
             as: "peliculas",
             through: "peliculas_personajes",
             foreignKey: "personajes_id",
