@@ -29,13 +29,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         } */
     };
+    let config = {
+        timestamps: false,
+    };
 
-    /* let config = {
-        timestamps: true,
-        createAt: "created_at",
-        updateAt: "updated_at",
-        deletedAt: "deleted_at",
-    }; */
 
     const Personajes = sequelize.define(alias, cols, config);
 
@@ -45,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
             through: "peliculas_personajes",
             foreignKey: "personajes_id",
             timestamps: false,
-            otherKey: "pelicula_id"
+            otherKey: "peliculas_id"
         });
 
     }

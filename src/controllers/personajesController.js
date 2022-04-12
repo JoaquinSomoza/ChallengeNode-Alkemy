@@ -1,11 +1,12 @@
 const db = require('../database/models');
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
+const { Op, Association } = require("sequelize");
+const { query } = require('express');
 
 const personajesController = {
     list: (req, res) => {
         db.Personajes.findAll({
-            attributes: ['imagen', 'nombre']
+            attributes: ['id', 'imagen', 'nombre', 'edad', 'peso', 'historia'],
         })
             .then(personaje => {
                 return res.status(200).json({
@@ -77,47 +78,40 @@ const personajesController = {
     detail: (req, res) => {
         let id = req.params.id;
         db.Personajes.findByPk(id, {
-            include: ['peliculas']
+            attributes: ['id', 'imagen', 'nombre', 'edad', 'peso', 'historia'],
+            /* include: [{ association: 'peliculas' }], */
         })
             .then(personaje => {
                 return res.status(200).json({
                     data: personaje,
                     status: 200,
-                    url: 'https://localhost:3000/characters/:id'
+                    url: 'https://localhost:3000/characters/detail/:id'
                 })
+                    .catch(e => console.log(e))
             })
     },
     search: (req, res) => {
-        let query = req.params.query;
+        let { nombre, peso, edad } = req.query;
         db.Personajes.findAll({
-            include: ['peliculas'],
             where: {
-                nombre: {
-                    [Op.like]: '%' + query + '%'
-                },
-                edad: {
-                    [Op.like]: '%' + query + '%'
-                },
-                peso: {
-                    [Op.like]: '%' + query + '%'
-                },
-                peliculas: {
-                    [Op.like]: '%' + query + '%'
-                }
-            }
+                [Op.or]: [
+                    { nombre: { [Op.like]: `%${nombre}%` } },
+                    { edad: { [Op.like]: `%${edad}%` } },
+                    { peso: { [Op.like]: `%${peso}%` } },
+                ]
+            },
+            attributes: ['nombre', 'edad', 'peso'],
+
         })
             .then(personaje => {
+                console.log(personaje)
                 return res.status(200).json({
-                    meta: {
-                        total: personaje.length,
-                        status: 200,
-                        url: "http://localhost:3000/characters/search?"
-                    },
                     data: personaje,
-                    pelicula: personaje.peliculas,
+                    status: 200,
+                    url: 'https://localhost:3000/characters/search',
                 })
+                    .catch(e => console.log(e))
             })
-            .catch(e => console.log(e))
     }
 }
 

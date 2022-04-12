@@ -20,12 +20,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         } */
     };
-    /*    let config = {
-           timestamps: true,
-           createAt: "created_at",
-           updateAt: "updated_at",
-           deletedAt: "deleted_at",
-       }; */
+    let config = {
+        timestamps: false,
+    };
+
 
     const Genero = sequelize.define(alias, cols, config);
 
