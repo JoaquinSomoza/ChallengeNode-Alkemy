@@ -41,3 +41,10 @@ CREATE TABLE `peliculas_personajes`(
   KEY `personajes_id_foreign` (`personajes_id`),
   CONSTRAINT `personajes_id_foreign` FOREIGN KEY (`personajes_id`) REFERENCES `personajes` (`id`)
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE `usuarios`(
+  `id` INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
+  PRIMARY KEY(`id`)
+) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;

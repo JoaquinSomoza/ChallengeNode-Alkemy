@@ -1,20 +1,3 @@
-/* const express = require('express');
-const port = 3000;
-
-
-const personajesRouter = require('./src/routes/personajesRoutes');
-const peliculasRouter = require('./src/routes/peliculasRoutes');
-const app = express();
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-
-app.use('/characters', personajesRouter);
-app.use('/movies', peliculasRouter);
-
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-}) */
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -23,7 +6,7 @@ var logger = require("morgan");
 
 //Require Routes
 const personajesRouter = require("./src/routes/personajesRoutes");
-
+const usuariosRouter = require("./src/routes/usuariosRoutes");
 var app = express();
 
 // view engine setup
@@ -38,7 +21,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //Routes
 app.use("/characters", personajesRouter);
-
+app.use("/auth", usuariosRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -54,5 +37,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
 
 module.exports = app;

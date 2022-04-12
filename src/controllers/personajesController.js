@@ -1,7 +1,6 @@
 const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op, Association } = require("sequelize");
-const { query } = require('express');
+const { Op } = require("sequelize");
+/* const { query } = require('express'); */
 
 const personajesController = {
     list: (req, res) => {
