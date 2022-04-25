@@ -7,6 +7,7 @@ var logger = require("morgan");
 //Require Routes
 const personajesRouter = require("./src/routes/personajesRoutes");
 const usuariosRouter = require("./src/routes/usuariosRoutes");
+const peliculasRouter = require("./src/routes/peliculasRoutes");
 var app = express();
 
 // view engine setup
@@ -22,6 +23,8 @@ app.use(express.static(path.join(__dirname, "public")));
 //Routes
 app.use("/characters", personajesRouter);
 app.use("/auth", usuariosRouter);
+app.use("/movies", peliculasRouter);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

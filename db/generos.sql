@@ -1,3 +1,4 @@
+use disney_db;
 insert into
   generos
 values

@@ -1,5 +1,6 @@
+USE disney_db;
 insert into
-  personajes (id, imagen, nombre, edad, peso)
+  personajes (id, imagen, nombre, edad, peso,historia)
 values
   (
     1,

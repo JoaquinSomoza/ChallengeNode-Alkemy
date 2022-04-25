@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS disney_db;
 CREATE DATABASE disney_db;
 USE disney_db;
-DROP TABLE IF EXIST `generos`;
+DROP TABLE IF EXISTS `generos`;
 CREATE TABLE `generos`(
   `id` INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
