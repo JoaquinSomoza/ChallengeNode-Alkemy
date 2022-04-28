@@ -1,6 +1,7 @@
 const db = require('../database/models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const welcomeMail = require('../email/send');
 
 
 const usuariosControllers = {
@@ -55,19 +56,20 @@ const usuariosControllers = {
                         data: 'El usuario ya existe',
                         status: 404,
                     })
-                } else {
+                } 
                     db.Usuarios.create({
                         email: req.body.email,
                         password: passEncriptada,
                     })
                         .then(usuario => {
+                            welcomeMail(email);
                             res.status(200).json({
                                 data: usuario,
                                 status: 200,
                                 msg: 'Usuario creado correctamente'
                             })
                         })
-                }
+                
             })
             .catch(e => console.log(e));
     }
