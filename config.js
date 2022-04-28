@@ -8,6 +8,8 @@ module.exports = {
         user: process.env.USER,
         password: process.env.PASSWORD
     },
-
+    mail:{
+        api:process.env.SENDGRID_API_KEY,
+    }
     
 }

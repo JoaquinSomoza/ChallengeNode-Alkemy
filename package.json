@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.6.2",
+    "@strapi/provider-email-sendgrid": "^4.1.9",
     "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",

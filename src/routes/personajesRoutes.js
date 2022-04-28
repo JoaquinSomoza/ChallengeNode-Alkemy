@@ -4,8 +4,8 @@ const personajesController = require('../controllers/personajesController');
 
 router.get('/', personajesController.list);
 router.get('/detail/:id', personajesController.detail);
-router.get('/edit/:id', personajesController.edit);
 router.get('/search', personajesController.search);
+router.put('/edit/:id', personajesController.edit);
 router.post('/create', personajesController.create);
 router.delete('/delete/:id', personajesController.delete);
 

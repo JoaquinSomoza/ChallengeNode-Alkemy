@@ -69,6 +69,7 @@ const usuariosControllers = {
                                 msg: 'Usuario creado correctamente'
                             })
                         })
+                        
                 
             })
             .catch(e => console.log(e));

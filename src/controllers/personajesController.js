@@ -34,8 +34,8 @@ const personajesController = {
                     status: 200,
                     url: 'https://localhost:3000/characters/create'
                 })
-                    .catch(e => console.log(e))
             })
+            .catch(e => console.log(e))
     },
     edit: (req, res) => {
         db.Personajes.update({
@@ -56,8 +56,8 @@ const personajesController = {
                     status: 200,
                     url: 'https://localhost:3000/characters/edit/:id'
                 })
-                    .catch(e => console.log(e))
             })
+            .catch(e => console.log(e))
     },
     delete: (req, res) => {
         db.Personajes.destroy({
@@ -71,8 +71,8 @@ const personajesController = {
                     status: 200,
                     url: 'https://localhost:3000/characters/delete/:id'
                 })
-                    .catch(e => console.log(e))
             })
+            .catch(e => console.log(e))
     },
     detail: (req, res) => {
         let id = req.params.id;
@@ -86,8 +86,8 @@ const personajesController = {
                     status: 200,
                     url: 'https://localhost:3000/characters/detail/:id'
                 })
-                    .catch(e => console.log(e))
             })
+            .catch(e => console.log(e))
     },
     search: (req, res) => {
         let { nombre, peso, edad } = req.query;
@@ -109,8 +109,8 @@ const personajesController = {
                     status: 200,
                     url: 'https://localhost:3000/characters/search',
                 })
-                    .catch(e => console.log(e))
             })
+            .catch(e => console.log(e))
     }
 }
 
