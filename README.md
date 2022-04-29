@@ -1,5 +1,4 @@
 ## Sobre la API de Disney
----
 
 Esta API fue desarrollada para explorar el mundo de Disney. Te permitirá conocer, crear y modificar personajes y las películas en las que intervienen.
 
@@ -9,7 +8,7 @@ Esta API fue desarrollada para explorar el mundo de Disney. Te permitirá conoce
 ---
 
 ## Comenzando
----
+
 Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
 
 ###
@@ -45,12 +44,12 @@ Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
 	    HOST= 'YOUR MYSQL DB HOSTNAME',
 	    USER= 'YOUR MYSQL DB USERNAME',
 	    PASSWORD= 'YOUR MYSQL DB PASSWORD'
-	    MAIL_APIKEY= 'The API key you got from Send Grid',
+	   SENDGRID_API_KEY= 'The API key you got from Send Grid',
 		MAIL_FROM= 'The mail from where you want to send your welcome email',
-		MAIL_TEMPLATE= 'The template you created on Dynamic Templates'
+		TEMPLATE_ID= 'The template you created on Dynamic Templates'
 		
    ```  
-4. Done! Now run the server.
+4. Listo, ahora solo levante el servidor.
    ```sh
    nodemon
    ```
@@ -58,9 +57,9 @@ Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-## Usage
+## Uso
 
-Para obtener una explicación detallada sobre cómo usar la API, consulte la _[Documentation](https://documenter.getpostman.com/view/18853937/UyrEiahg)_
+Para obtener una explicación detallada sobre cómo usar la API, consulte la _[Documentación](https://documenter.getpostman.com/view/18853937/UyrEiahg)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
