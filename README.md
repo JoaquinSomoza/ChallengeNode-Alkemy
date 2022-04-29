@@ -56,7 +56,7 @@ Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+---
 ## Uso
 
 Para obtener una explicación detallada sobre cómo usar la API, consulte la _[Documentación](https://documenter.getpostman.com/view/18853937/UyrEiahg)_
