@@ -9,5 +9,4 @@ router.put('/edit/:id', personajesController.edit);
 router.post('/create', personajesController.create);
 router.delete('/delete/:id', personajesController.delete);
 
-
 module.exports = router;

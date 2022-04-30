@@ -24,10 +24,6 @@ module.exports = (sequelize, DataTypes) => {
         historia: {
             type: DataTypes.TEXT(),
         },
-        /* peliculas_id: {
-            type: DataTypes.INTEGER(11),
-            allowNull: false
-        } */
     };
     let config = {
         timestamps: false,

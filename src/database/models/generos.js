@@ -15,10 +15,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(100),
             allowNull: false
         },
-        /* peliculas_id: {
-            type: DataTypes.BIGINT(11),
-            allowNull: false
-        } */
     };
     let config = {
         timestamps: false,

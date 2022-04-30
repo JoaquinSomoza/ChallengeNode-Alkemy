@@ -78,7 +78,6 @@ const personajesController = {
         let id = req.params.id;
         db.Personajes.findByPk(id, {
             attributes: ['id', 'imagen', 'nombre', 'edad', 'peso', 'historia'],
-            /* include: [{ association: 'peliculas' }], */
         })
             .then(personaje => {
                 return res.status(200).json({

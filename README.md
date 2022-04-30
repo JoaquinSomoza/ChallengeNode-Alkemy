@@ -18,7 +18,7 @@ Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
 
 * MySql
 	* Siga estos [pasos de instalación](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/).
-	* Cree ana base de datos para la apliacación.
+	* Cree una base de datos para la aplicación.
 * Send Grid
 	* Cree una cuenta [desde aquí](https://sendgrid.com/)
 	* [Configura la autenticación](https://docs.sendgrid.com/ui/account-and-settings/how-to-set-up-domain-authentication#setting-up-domain-authentication)
@@ -49,7 +49,7 @@ Para obtener una copia local en funcionamiento, siga estos sencillos pasos.
 		TEMPLATE_ID= 'The template you created on Dynamic Templates'
 		
    ```  
-4. Listo, ahora solo levante el servidor.
+4. Listo, ahora solo levante el servidor, el cual lo hara en el puerto 3000.
    ```sh
    nodemon
    ```

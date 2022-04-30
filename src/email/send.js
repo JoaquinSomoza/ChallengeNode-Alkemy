@@ -3,7 +3,6 @@ const mailer=require('../../config');
 const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey(mailer.mail.api);
-/* sgMail.setApiKey('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'); */
 welcomeMail = ( mailTo ) => {
     const msg = {
     to: mailTo,
